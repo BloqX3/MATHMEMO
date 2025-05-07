@@ -1,0 +1,78 @@
+/* Overlay background */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.2s ease-out forwards;
+    z-index: 1000;
+    
+  }
+  
+  /* Popup box */
+  .popup-content {
+    background-color: #242424;    /* matches your theme */
+    color: inherit;
+    border-radius: 8px;
+    max-width: 90%;
+    width: 400px;
+    padding: 15px 25px 25px 25px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    transform: scale(0.8);
+    opacity: 0;
+    animation: scaleFadeIn 0.2s ease-out forwards;
+  }
+  
+  /* Header with close button */
+  .popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .popup-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+  
+  .popup-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: inherit;
+    padding: 0;
+  }
+  
+  /* Body content */
+  .popup-body {
+    line-height: 1.4;
+  }
+  
+  /* Animations */
+  @keyframes scaleFadeIn {
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    to {
+      background-color: rgba(0,0,0,0.6);
+    }
+  }
+  
+@media (prefers-color-scheme: light) {
+  .popup-content {
+    color: #213547;
+    background-color: #ffffff;
+  }
+    
+}
