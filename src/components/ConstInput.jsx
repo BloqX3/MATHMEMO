@@ -16,7 +16,7 @@ export default function ConstantInput({
 
   useEffect(() => {
     // Start the animation when error changes.
-    setAnimationName("flashRed 100ms forwards");
+    setAnimationName("flashRed 150ms forwards");
 
     // If a timeout is already pending, clear it.
     if (timeoutRef.current) {
@@ -27,7 +27,7 @@ export default function ConstantInput({
     timeoutRef.current = setTimeout(() => {
       setAnimationName("");
       timeoutRef.current = null;
-    }, 100);
+    }, 150);
 
     // Clear timeout if the component unmounts or before re-running effect.
     return () => {
@@ -51,7 +51,7 @@ export default function ConstantInput({
         onChange={e => onChange(e.target.value)}
         inputMode="numeric"
         autoComplete="off"
-        placeholder="Enter digits…"
+        placeholder="Start writing…"
       />
     </div>
   );

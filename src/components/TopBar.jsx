@@ -4,8 +4,9 @@ import { FaGithub } from 'react-icons/fa'; // npm install react-icons
 import ProjectPopup from './ProjectPopup';
 import AboutDialog from './AboutDialog';
 import CryptoDonate from './CryptoDonate';
+import {ScoreIndicator} from "./ScoreIndicator.jsx";
 
-export default function TopBar() {
+export default function TopBar({percentage}) {
   const [about, openAbout] = useState(false)
   const [donate, openDonate] = useState(false)
   return (
@@ -46,7 +47,24 @@ export default function TopBar() {
           GitHub
         </a>
       </nav>
-
+      <div style={{
+             flex: '1 1 auto',
+             maxWidth:'300px',
+             padding:'0 10px 0 10px',
+             overflow: 'hidden'
+           }}>
+        <div style={{
+               fontSize:'12px',
+               paddingBottom:'5px',
+               fontFamily:'monospace',
+               fontWeight:'550',
+               whiteSpace:'nowrap',
+               overflow: 'hidden'
+             }}>
+          TOP {100 - percentage}%
+        </div>
+        <ScoreIndicator percentage={percentage}/>
+      </div>
       <button
         className="topbar__donate"
         onClick={() => (openDonate(true))}
